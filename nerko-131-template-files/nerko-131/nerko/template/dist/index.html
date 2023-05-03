@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zxx" class="uk-background-white dark:uk-background-gray-100 dark:uk-text-gray-40 uk-dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nerko Template</title>
+        <meta name="description" content="description...">
+        <meta name="theme-color" content="#741ff5">
+
+        <!-- preload head styles -->
+        <link rel="preload" href="assets/fonts/brand-icons/brand-icons.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="assets/fonts/unicons/Unicons.woff?lkolxg" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@8.3.2/swiper-bundle.min.css" as="style">
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/css/uikit.min.css" as="style">
+
+        <!-- <link rel="preload" href="assets/css/theme/main.min.css" as="style"> -->
+
+        <!-- preload footer scripts -->
+        <link rel="preload" href="assets/js/uikit.min.js" as="script">
+        <link rel="preload" href="assets/js/uikit-components.js" as="script">
+        <link rel="preload" href="assets/js/jquery.min.js" as="script">
+        <link rel="preload" href="assets/js/swiper-bundle.min.js" as="script">
+        <link rel="preload" href="assets/js/feather.min.js" as="script">
+        <link rel="preload" href="assets/js/typed.min.js" as="script">
+        <link rel="preload" href="assets/js/anime.min.js" as="script">
+        <link rel="preload" href="assets/js/app.js" as="script">
+        <link rel="preload" href="assets/js/data-attr-helper.js" as="script">
+        <link rel="preload" href="assets/js/swiper-helper.js" as="script">
+        <link rel="preload" href="assets/js/typed-helper.js" as="script">
+        <link rel="preload" href="assets/js/anime-helper.js" as="script">
+
+        <!-- <link rel="preload" href="assets/js/anime-helper-defined-timelines.js" as="script"> -->
+
+        <!-- include styles -->
+        <script src="assets/js/app-head.js"></script>
+        <link rel="stylesheet" href="assets/css/theme/main.min.css">
+
+        <!-- include scripts -->
+        <script src="assets/js/uikit.min.js"></script>
+        <script src="assets/js/uikit-components.js"></script>
+    </head>
+    <body>
+
+        <!-- Menu modal -->
+        <div id="uni_mobile_menu" class="uni-mobile-menu uk-offcanvas" data-uk-offcanvas="mode: push; overlay: true; flip: true; selPanel: .uk-offcanvas-bar-panel;">
+            <div class="uk-offcanvas-bar-panel uk-panel dark:uk-background-gray-100">
+                <div class="uni-mobile-menu-wrap uk-flex-column uk-flex-between" data-uk-height-viewport="offset-bottom: true;">
+                    <div class="uni-mobile-menu-content">
+                        <header class="uk-card uk-card-2xsmall uk-flex-middle uk-flex-between">
+                            <div class="uk-flex-1">
+                                <button aria-label="Close Menu" class="uk-offcanvas-close uk-button uk-button-small uk-button-icon uk-button-default uk-button-outline uk-radius-circle" type="button">
+                                    <i class="uk-icon-small" data-feather="arrow-left"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <h5 class="uk-h5 uk-text-uppercase uk-margin-remove">Navigation</h5>
+                            </div>
+                            <div class="uk-flex-1"></div>
+                        </header>
+                        <hr class="uk-margin-remove">
+                        <div class="uk-card uk-card-small">
+                            <div class="uk-panel">
+                                <ul class="uk-nav uk-nav-default">
+                                    <li class="uk-nav-header">Homepages</li>
+                                    <li><a href="main/landing-01.html">Landing 01</a></li>
+                                    <li><a href="main/landing-02.html">Landing 02</a></li>
+                                    <li><a href="main/landing-03.html">Landing 03</a></li>
+                                    <li><a href="main/landing-04.html">Landing 04</a></li>
+                                    <li><a href="main/landing-05.html">Landing 05</a></li>
+                                    <li class="uk-nav-header">Inner pages</li>
+                                    <li><a href="main/base.html">Base components</a></li>
+                                    <li><a href="main/connect-wallet.html">Connect wallet</a></li>
+                                    <li><a href="main/contact.html">Contact</a></li>
+                                    <li><a href="main/404.html">404 page</a></li>
+                                    <li><a href="main/coming-soon.html">Coming soon</a></li>
+                                    <li class="uk-nav-header">Content &amp; Privacy</li>
+                                    <li><a href="main/terms.html">Terms of use</a></li>
+                                    <li><a href="main/privact.html">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User search modal -->
+        <div id="uni_search_modal" class="uk-modal-full uk-modal" data-uk-modal>
+            <div class="uk-modal-dialog dark:uk-background-white-5">
+                <button class="uk-modal-close-full uk-position-small dark:uk-text-white" type="button"><i data-feather="x"></i></button>
+                <div class="uk-container uk-container-xsmall">
+                    <div class="uk-section-2xlarge uk-width-2xlarge@m uk-margin-auto" data-uk-height-viewport="">
+                        <form class="search-form uk-search uk-search-large uk-width-1-1" action="./search-ajax.html" method="get">
+                            <input class="uk-search-input uk-text-center uk-border-bottom" type="search" name="s" autocomplete="off" placeholder="Search item or artist..">
+                            <div class="search-results uk-margin-medium-top uk-hidden">
+                                <div class="search-results-content uk-panel uk-hidden"></div>
+                                <div class="search-results-loading uk-flex-center uk-flex-middle uk-height-1-1">
+                                    <span class="uk-flex-center uk-flex-middle" data-uk-spinner="ratio: .8"></span>
+                                </div>
+                            </div>
+                            <noscript>
+                                <button aria-label="Submit" type="submit" class="uk-form-icon uk-form-icon-flip">
+                                    <i class="uk-icon-xsmall" data-feather="search"></i>
+                                </button>
+                            </noscript>
+                        </form>
+                        <div class="uk-text-small uk-text-center uk-margin-top uk-margin-large-top@m">Type your keyword and hit "enter" for search and hit "esc" to close!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div id="wrapper" class="uk-background-gray-100 uk-text-white uk-dark">
+
+                <!-- Overview -->
+                <header id="header" class="uk-panel uk-overflow-hidden uk-position-z-index uk-background-gray-100">
+                    <div class="uk-position-top uk-position-z-index-negative uk-blend-hard-light" data-uk-height-viewport="">
+                        <img class="uk-position-top uk-blur-large" style="left: 25%; top: -80%" width="700" src="assets/images/gradient-circle.svg" alt="Circle">
+                    </div>
+                    <div class="uk-container">
+                        <div class="uk-section-large uk-section-xlarge@m uk-flex-center uk-flex-middle" data-uk-height-viewport="offset-bottom: 30;">
+                            <img class="uk-position-top-left uni-animation-spin uk-visible@m" width="40" src="assets/images/objects/sparkle-light.png" alt="object" style="top: 45%; left: 30%">
+                            <img class="uk-position-top-right uni-animation-spin uk-visible@m" width="40" src="assets/images/objects/sparkle-light.png" alt="object" style="top: 35%; right: 30%">
+                            <img class="uk-position-top-left uni-animation-bounce uni-animation-delay-small uk-visible@m" width="24" src="assets/images/objects/orange-ball-blur.png" alt="object" style="top: 16%; left: 24%" data-uk-svg="">
+                            <img class="uk-position-left uni-animation-bounce uni-animation-delay-large uk-visible@m" width="40" src="assets/images/objects/violet-ball.png" alt="object" style="top: 34%; left: 16%" data-uk-svg="">
+                            <img class="uk-position-bottom-left uni-animation-bounce uk-visible@m" width="24" src="assets/images/objects/orange-ball.png" alt="object" style="bottom: 30%; left: 24%">
+                            <img class="uk-position-top-right uni-animation-bounce uni-animation-delay-small uk-visible@m" width="36" src="assets/images/objects/violet-ball.png" alt="object" style="top: 16%; right: 24%" data-uk-svg="">
+                            <img class="uk-position-right uni-animation-bounce uni-animation-delay-large uk-visible@m" width="40" src="assets/images/objects/orange-ball.png" alt="object" style="top: 34%; right: 16%" data-uk-svg="">
+                            <img class="uk-position-bottom-right uni-animation-bounce uk-visible@m" width="24" src="assets/images/objects/violet-ball-blur.png" alt="object" style="bottom: 30%; right: 24%">
+                            <div class="uk-panel uk-flex-column uk-flex-middle uk-text-center uk-position-z-index">
+                                <img class="uk-visible@m" width="100" src="assets/images/nerko-icon.svg" alt="Nerko">
+                                <img class="uk-hidden@m" width="80" src="assets/images/nerko-icon.svg" alt="Nerko">
+                                <img class="uk-margin-top uk-visible@m" width="240" src="assets/images/nerko-dark.svg" alt="Nerko">
+                                <img class="uk-margin-top uk-hidden@m" width="160" src="assets/images/nerko-dark.svg" alt="Nerko">
+                                <p class="uk-text-lead uk-margin-top uk-margin-medium-top@m">
+                                    NFT Portfolio Onepage <br>
+                                    HTML Site Template
+                                </p>
+                                <a href="main/#demos" class="uk-button uk-button-medium uk-button-large@m uk-button-gradient uk-margin-top uk-margin-medium-top@m" data-uk-scroll>Live Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <img class="uk-width-2xsmall uk-flex-center uk-margin-auto" src="assets/images/divider-01.svg" alt="Divider">
+
+                <!-- Demos -->
+                <div id="demos" class="uk-panel uk-section-large uk-section-2xlarge@m uk-overflow-hidden">
+                    <div class="uk-container">
+                        <div class="uk-grid-xsmall uk-grid-xlarge@m uk-child-width-1-3@m uk-text-center uk-grid" data-uk-grid="masonry: true; parallax: 200;">
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_01_light.png" alt="Landing 01 - Light" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-01.html?schema=light" class="uk-position-cover" target="_blank" aria-label="Landing 01 - Light"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 01 - Light</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_01.png" alt="Landing 01 - Dark" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-01.html?schema=dark" class="uk-position-cover" target="_blank" aria-label="Landing 01 - Dark"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 01 - Dark</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_02_light.png" alt="Landing 02 - Light" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-02.html?schema=light" class="uk-position-cover" target="_blank" aria-label="Landing 02 - Light"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 02 - Light</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_02.png" alt="Landing 02 - Dark" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-02.html?schema=dark" class="uk-position-cover" target="_blank" aria-label="Landing 02 - Dark"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 02 - Dark</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_03_light.png" alt="Landing 03 - Light" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-03.html?schema=light" class="uk-position-cover" target="_blank" aria-label="Landing 03 - Light"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 03 - Light</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_03.png" alt="Landing 03 - Dark" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-03.html?schema=dark" class="uk-position-cover" target="_blank" aria-label="Landing 03 - Dark"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 03 - Dark</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_04_light.png" alt="Landing 04 - Light" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-04.html?schema=light" class="uk-position-cover" target="_blank" aria-label="Landing 04 - Light"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 04 - Light</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_04.png" alt="Landing 04 - Dark" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-04.html?schema=dark" class="uk-position-cover" target="_blank" aria-label="Landing 04 - Dark"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 04 - Dark</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_05_light.png" alt="Landing 05 - Light" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-05.html?schema=light" class="uk-position-cover" target="_blank" aria-label="Landing 05 - Light"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 05 - Light</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/landing_05.png" alt="Landing 05 - Dark" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/landing-05.html?schema=dark" class="uk-position-cover" target="_blank" aria-label="Landing 05 - Dark"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Landing 05 - Dark</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/soon.png" alt="Upcoming Pages" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/#" class="uk-position-cover" target="_blank" aria-label="Upcoming Pages"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Upcoming Pages</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="uk-text-center uk-margin-large-top">More landing pages are coming...</p>
+                    </div>
+                </div>
+
+                <img class="uk-width-2xsmall uk-flex-center uk-margin-auto" src="assets/images/divider-01.svg" alt="Divider">
+
+                <!-- Inner pages -->
+                <div id="inner_pages" class="uk-panel uk-section-large uk-section-2xlarge@m uk-overflow-hidden">
+                    <div class="uk-container">
+                        <header class="uk-panel uk-margin uk-margin-2xlarge@m">
+                            <h2 class="uk-h4 uk-h2@m uk-text-center uk-text-uppercase">Inner pages</h2>
+                        </header>
+                        <div class="uk-grid-xsmall uk-grid-xlarge@m uk-child-width-1-4@m uk-grid-match uk-text-center uk-grid" data-uk-grid="masonry: true; parallax: 200;">
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/blog.png" alt="Blog page" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/blog.html" target="_blank" class="uk-position-cover" aria-label="Blog page"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Blog page</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/blog-single.png" alt="Blog single" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/blog-single.html" target="_blank" class="uk-position-cover" aria-label="Blog single"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Blog single</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/contact.png" alt="Contact page" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/contact.html" target="_blank" class="uk-position-cover" aria-label="Contact page"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Contact page</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/404.png" alt="404 page" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/404.html" target="_blank" class="uk-position-cover" aria-label="404 page"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">404 page</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/connect-wallet.png" alt="Connect wallet" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/connect-wallet.html" target="_blank" class="uk-position-cover" aria-label="Connect wallet"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Connect wallet</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/sign-up.png" alt="Sign up" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/sign-up.html" target="_blank" class="uk-position-cover" aria-label="Sign up"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Sign up</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/sign-in.png" alt="Sign in" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/sign-in.html" target="_blank" class="uk-position-cover" aria-label="Sign in"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Sign in</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <div class="uk-panel uk-card uk-card-xsmall uk-radius-large uk-box-shadow-xsmall uk-box-shadow-hover-large uk-overflow-hidden uk-background-gray-80">
+                                        <img src="assets/images/demo/reset-password.png" alt="Reset password" width="580" height="318" class="uk-width-1-1 uk-radius-medium" loading="lazy"> <a href="main/reset-password.html" target="_blank" class="uk-position-cover" aria-label="Reset password"></a>
+                                        <p class="uk-text-semibold uk-padding-xsmall">Reset password</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <img class="uk-width-2xsmall uk-flex-center uk-margin-auto" src="assets/images/divider-01.svg" alt="Divider">
+
+                <!-- Footer -->
+                <footer id="footer" class="uk-panel uk-overflow-hidden uk-position-z-index uk-background-gray-100">
+                    <div class="uk-position-bottom uk-position-z-index-negative uk-blend-hard-light" data-uk-height-viewport="">
+                        <img class="uk-position-bottom uk-blur-large" style="left: 25%; bottom: -80%" width="700" src="assets/images/gradient-circle.svg" alt="Circle">
+                    </div>
+                    <div class="uk-container">
+                        <div class="uk-section-large uk-section-xlarge@m uk-flex-center uk-flex-middle" data-uk-height-viewport="offset-bottom: 30; media: @m;">
+                            <img class="uk-position-top-left uni-animation-bounce uni-animation-delay-small uk-visible@m" width="24" src="assets/images/objects/orange-ball-blur.png" alt="object" style="top: 16%; left: 24%" data-uk-svg="">
+                            <img class="uk-position-left uni-animation-bounce uni-animation-delay-large uk-visible@m" width="40" src="assets/images/objects/violet-ball.png" alt="object" style="top: 34%; left: 16%" data-uk-svg="">
+                            <img class="uk-position-bottom-left uni-animation-bounce uk-visible@m" width="24" src="assets/images/objects/orange-ball.png" alt="object" style="bottom: 30%; left: 24%">
+                            <img class="uk-position-top-right uni-animation-bounce uni-animation-delay-small uk-visible@m" width="36" src="assets/images/objects/violet-ball.png" alt="object" style="top: 16%; right: 24%" data-uk-svg="">
+                            <img class="uk-position-right uni-animation-bounce uni-animation-delay-large uk-visible@m" width="40" src="assets/images/objects/orange-ball.png" alt="object" style="top: 34%; right: 16%" data-uk-svg="">
+                            <img class="uk-position-bottom-right uni-animation-bounce uk-visible@m" width="24" src="assets/images/objects/violet-ball-blur.png" alt="object" style="bottom: 30%; right: 24%">
+                            <div class="uk-panel uk-flex-column uk-flex-middle uk-text-center uk-position-z-index">
+                                <span class="uk-text-overline">Download template</span>
+                                <h3 class="uk-h4 uk-heading-d2@m uk-text-uppercase uk-margin-medium-top@m">
+                                    Do you like <br>
+                                    <span class="uk-text-gradient">Nerko</span>
+                                </h3>
+                                <a href="https://themeforest.net/item/nerko-nft-portfolio-onepage-template/39450959" class="uk-button uk-button-medium uk-button-large@m uk-button-gradient uk-margin-top">
+                                    <span>Download Now</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- include scripts -->
+        <script defer src="assets/js/jquery.min.js"></script>
+        <script defer src="assets/js/swiper-bundle.min.js"></script>
+        <script defer src="assets/js/feather.min.js"></script>
+        <script defer src="assets/js/typed.min.js"></script>
+        <script defer src="assets/js/anime.min.js"></script>
+        <script defer src="assets/js/app.js"></script>
+        <script defer src="assets/js/data-attr-helper.js"></script>
+        <script defer src="assets/js/swiper-helper.js"></script>
+        <script defer src="assets/js/typed-helper.js"></script>
+        <script defer src="assets/js/anime-helper.js"></script>
+
+        <!-- <script defer src="assets/js/anime-helper-defined-timelines.js"></script> -->
+        <script>
+            // Schema toggle via URL
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const getSchema = urlParams.get("schema");
+            if (getSchema === "dark") {
+                document.documentElement.classList.add("uk-dark");
+                localStorage.setItem("darkMode", "1");
+            } else if (getSchema === "light") {
+                document.documentElement.classList.remove("uk-dark");
+                localStorage.setItem("darkMode", "0");
+            }
+        </script>
+    </body>
+</html>

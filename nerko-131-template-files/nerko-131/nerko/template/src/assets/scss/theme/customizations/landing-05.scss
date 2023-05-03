@@ -1,0 +1,49 @@
+.uni-roadmap {
+    &-switcher {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 56px;
+        width: 100%;
+        overflow-x: auto;
+        > li {
+            flex: 1;
+            opacity: .5;
+            white-space: nowrap;
+            &.uk-active {
+                opacity: 1;
+            }
+            > a {
+                text-decoration: none;
+                > * {
+                    word-wrap: normal;
+                    word-break: keep-all;
+                }
+            }
+        }
+        @include sm {
+            flex-direction: column;
+            gap: 24px;
+            counter-reset: roadmap;
+            > li {
+                a::before {
+                    content: '0' counter(roadmap);
+                    counter-increment: roadmap;
+                    width: 40px;
+                    text-align: center;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    position: absolute;
+                    left: 0;
+                    transform: translate(-48px, -24px);
+                    color: var(--color-secondary);
+                    opacity: 0;
+                }
+                &.uk-active a::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.uk-blur {
+    &-small {
+        filter: blur(8px);
+    }
+    &-medium {
+        filter: blur(40px);
+    }
+    &-large {
+        filter: blur(80px);
+    }
+}
