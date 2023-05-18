@@ -22,7 +22,7 @@ app.use(passport.session());
 app.use(express.static('public'));
 
 // Set up the database connection
-mongoose.connect('mongodb://localhost:27017/', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://bokkasaiganesh:VB2pL7elMTZr36tO@ac-6oq4bws-shard-00-00.odfwzrm.mongodb.net:27017,ac-6oq4bws-shard-00-01.odfwzrm.mongodb.net:27017,ac-6oq4bws-shard-00-02.odfwzrm.mongodb.net:27017/?replicaSet=atlas-b55mzv-shard-0&ssl=true&authSource=admin', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
@@ -62,11 +62,15 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
-passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
-    done(err, user);
-  });
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id);
+    done(null, user);
+  } catch (err) {
+    done(err);
+  }
 });
+
 
 
 app.get('/', (req, res) => {
@@ -83,6 +87,10 @@ app.get('/signin', (req, res) => {
 
 app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'contact.html'));
+});
+
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/dashboard.html'));
 });
 
 
