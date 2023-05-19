@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const path = require('path');
+const flash = require('connect-flash');
 
 // Create the express app
 const app = express();
@@ -17,6 +18,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('public'));
@@ -93,8 +95,18 @@ app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/dashboard.html'));
 });
 
+app.get('/logout', (req, res) => {
+  req.logout(function(err) {
+    if (err) {
+      console.error(err);
+      return res.status(500).send('An error occurred during logout.');
+    }
+    req.flash('successMessage', 'Logged Out successfully.');
+    res.redirect('/signin?successMessage=Logged Out successfully.');
+  });
+});
 
-// Define the signup route
+
 app.post('/signup', (req, res) => {
   const { username, email, password } = req.body;
   bcrypt.hash(password, 10)
@@ -107,21 +119,29 @@ app.post('/signup', (req, res) => {
       return newUser.save();
     })
     .then(() => {
-      res.redirect('/signin'); // Redirect to the sign-in page upon successful signup
+      // Set the success message in the session
+      req.flash('successMessage', 'Account created successfully.');
+      res.redirect('/signin?successMessage=Account created successfully.');
     })
     .catch((err) => {
       if (err.code === 11000) {
         if (err.keyPattern.username) {
-          res.status(400).send('Username already taken.'); // Username is already taken
+          // Set the error message for username already taken
+          req.flash('errorMessage', 'Username already taken.');
+          res.redirect('/signup?errorMessage=Username already taken.');
         } else if (err.keyPattern.email) {
-          res.status(400).send('Email already in use.'); // Email is already in use
+          // Set the error message for email already in use
+          req.flash('errorMessage', 'Email already in use.');
+          res.redirect('/signup?errorMessage=Email already in use.');
         }
       } else {
         console.error(err);
-        res.status(500).send('An error occurred during signup.');
+        req.flash('errorMessage', 'An error occurred during signup.');
+        res.redirect('/signup?errorMessage=An error occurred during signup.');
       }
     });
 });
+
 // Define the sign-in route
 app.post('/signin', (req, res, next) => {
   passport.authenticate('local', { usernameField: 'email' }, (err, user, info) => {
@@ -129,16 +149,20 @@ app.post('/signin', (req, res, next) => {
       return next(err);
     }
     if (!user) {
-      return res.redirect('/signin'); // Redirect to the sign-in page if authentication fails
+      req.flash('error', 'Invalid email or password.'); // Set flash message for invalid email or password
+      return res.redirect('/signin?errorMessage=Invalid email or password.');
     }
     req.logIn(user, (err) => {
       if (err) {
-        return next(err);
+        req.flash('error', 'Invalid email or password.'); // Set flash message for invalid email or password
+        return res.redirect('/signin?errorMessage=Invalid email or password.');
       }
       return res.redirect('/dashboard'); // Redirect to the dashboard page upon successful sign-in
     });
   })(req, res, next);
 });
+
+
 // Start the server
 const port = 3000;
 app.listen(port, () => {

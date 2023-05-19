@@ -24915,6 +24915,11 @@ html.bp-xl .uk-subnav-collapse\@xl>* {
     color: var(--color-darkgrey-60)
 }
 
+.uk-alert-success,
+.uk-alert-danger {
+    display: none;
+}
+
 .uk-alert-close {
     display: inline-flex;
     justify-content: center;
