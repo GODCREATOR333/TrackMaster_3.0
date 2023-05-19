@@ -14,6 +14,7 @@
     "array-flatten": "^1.1.1",
     "balanced-match": "^1.0.2",
     "bcrypt": "^5.1.0",
+<<<<<<< HEAD
     "binary-extensions": "^2.2.0",
     "body-parser": "^1.20.1",
     "brace-expansion": "^1.1.11",
@@ -40,6 +41,9 @@
     "encodeurl": "^1.0.2",
     "escape-html": "^1.0.3",
     "etag": "^1.8.1",
+=======
+    "connect-flash": "^0.1.1",
+>>>>>>> 7adb325c0311cfcabb9bb329f8a2e9b6eefce383
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "fill-range": "^7.0.1",

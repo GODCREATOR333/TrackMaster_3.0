@@ -63,7 +63,7 @@
                         <nav class="uk-navbar uk-navbar-container uk-navbar-transparent" data-uk-navbar>
                             <div class="uk-navbar-top">
                                 <div class="uk-navbar-left">
-                                    <a class="uk-logo uk-navbar-item uk-h4 uk-h3@m uk-margin-remove" href="index.html"> <img class="uk-visible dark:uk-hidden" width="120" src="/images/nerko-light.svg" alt="Nerko" loading="lazy"> <img class="uk-hidden dark:uk-visible" width="120" src="/images/nerko-dark.svg" alt="Nerko" loading="lazy"> </a>
+                                    <a class="uk-logo uk-navbar-item uk-h4 uk-h3@m uk-margin-remove" href="/"> <img class="uk-visible dark:uk-hidden" width="120" src="/images/nerko-light.svg" alt="Nerko" loading="lazy"> <img class="uk-hidden dark:uk-visible" width="120" src="/images/nerko-dark.svg" alt="Nerko" loading="lazy"> </a>
                                 </div>
 
                                 <div class="uk-navbar-right uk-flex-1 uk-flex-right">
@@ -114,6 +114,15 @@
                 <div class="uk-margin-top uk-margin-medium-top@m">
                     <div class="uk-container">
                         <div class="uk-flex-column uk-flex-center uk-width-medium@m uk-margin-auto">
+                            <div id="successMessage" class="uk-alert-success hidden" data-uk-alert>
+                                <a class="uk-alert-close" data-uk-close></a>
+                                <p></p>
+                            </div>
+                        
+                            <div id="errorMessage" class="uk-alert-danger hidden" data-uk-alert>
+                                <a class="uk-alert-close" data-uk-close></a>
+                                <p></p>
+                            </div>
                             <form class="uk-form-stacked uk-panel uk-width-1-1" action="/signup" method="post" data-uk-margin="margin: uk-margin">
                                 <div>
                                     <label for="username-signup" class="uk-form-label">Your username: <span class="uk-text-danger">*</span></label>
@@ -137,7 +146,7 @@
                                 </div>
                             </form>
                             <p class="uk-text-small uk-text-bold uk-text-center uk-margin-small-top@m">
-                                You already have an account? <a href="sign-in.html" class="uk-link-line uk-text-primary"><span>Log in</span></a>.
+                                You already have an account? <a href="/signin" class="uk-link-line uk-text-primary"><span>Log in</span></a>.
                             </p>
                         </div>
                     </div>
@@ -158,7 +167,7 @@
                     <div class="uk-grid uk-flex-center uk-text-center" data-uk-grid>
                         <div class="uk-width-large@m">
                             <div class="uk-panel">
-                                <a href="index.html" class="uk-logo">
+                                <a href="/" class="uk-logo">
                                     <img width="200" src="/images/nerko.svg" alt="Nerko">
                                 </a>
                                 <p class="uk-text-xlarge@m uk-margin-medium-top@m">We make it easy to Discover, Invest and manage all your NFTs at one place.</p>
@@ -211,6 +220,27 @@
         <script defer src="/js/swiper-helper.js"></script>
         <script defer src="/js/typed-helper.js"></script>
         <script defer src="/js/anime-helper.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Retrieve the flash messages from the URL query parameters
+              const urlParams = new URLSearchParams(window.location.search);
+              const successMessage = urlParams.get('successMessage');
+              const errorMessage = urlParams.get('errorMessage');
+        
+              // Display the flash messages if they exist
+              if (successMessage) {
+                const successMessageElement = document.getElementById('successMessage');
+                successMessageElement.querySelector('p').textContent = successMessage;
+                successMessageElement.style.display = 'block';
+              }
+        
+              if (errorMessage) {
+                const errorMessageElement = document.getElementById('errorMessage');
+                errorMessageElement.querySelector('p').textContent = errorMessage;
+                errorMessageElement.style.display = 'block';
+              }
+            });
+          </script>
 
         <!-- <script defer src="/js/anime-helper-defined-timelines.js"></script> -->
         <script>

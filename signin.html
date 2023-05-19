@@ -113,6 +113,15 @@
                 <div class="uk-margin-top uk-margin-large-top@m">
                     <div class="uk-container">
                         <div class="uk-flex-column uk-flex-center uk-width-medium@m uk-margin-auto">
+                            <div id="successMessage" class="uk-alert-success hidden" data-uk-alert>
+                                <a class="uk-alert-close" data-uk-close></a>
+                                <p></p>
+                            </div>
+                        
+                            <div id="errorMessage" class="uk-alert-danger hidden" data-uk-alert>
+                                <a class="uk-alert-close" data-uk-close></a>
+                                <p></p>
+                            </div>
                             <form class="uk-form-stacked uk-panel uk-width-1-1" action="/signin" method="post" data-uk-margin="margin: uk-margin">
                                 <div>
                                     <label for="email-login-page" class="uk-form-label">Your email: <span class="uk-text-danger">*</span></label>
@@ -217,6 +226,27 @@
         <script defer src="/js/swiper-helper.js"></script>
         <script defer src="/js/typed-helper.js"></script>
         <script defer src="/js/anime-helper.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Retrieve the flash messages from the URL query parameters
+              const urlParams = new URLSearchParams(window.location.search);
+              const successMessage = urlParams.get('successMessage');
+              const errorMessage = urlParams.get('errorMessage');
+        
+              // Display the flash messages if they exist
+              if (successMessage) {
+                const successMessageElement = document.getElementById('successMessage');
+                successMessageElement.querySelector('p').textContent = successMessage;
+                successMessageElement.style.display = 'block';
+              }
+        
+              if (errorMessage) {
+                const errorMessageElement = document.getElementById('errorMessage');
+                errorMessageElement.querySelector('p').textContent = errorMessage;
+                errorMessageElement.style.display = 'block';
+              }
+            });
+          </script>
 
         <!-- <script defer src="/js/anime-helper-defined-timelines.js"></script> -->
         <script>
