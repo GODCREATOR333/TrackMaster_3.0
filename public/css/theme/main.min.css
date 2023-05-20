@@ -3147,8 +3147,8 @@
     --header-logo-image-width: initial;
     --header-logo-image-height: initial;
     --header-logo-color-text: var(--color-gray-100);
-    --header-logo-width: 120px;
-    --header-logo-sticky-width: 90px;
+    --header-logo-width: 240px;
+    --header-logo-sticky-width: 240px;
     --header-navbar-font-typeface: var(--font-family-primary);
     --header-navbar-font-size: 1.25rem;
     --header-navbar-font-weight: 700;
