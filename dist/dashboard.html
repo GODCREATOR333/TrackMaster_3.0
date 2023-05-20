@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <!--begin::Head-->
 
 <head>
@@ -27,6 +29,12 @@
 	<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
 	<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<style>
+		.symbol-label {
+			width: 40px;
+			height: 40px;
+		}
+	</style>
 	<!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -1277,47 +1285,47 @@
 						<div class="card mb-5 mb-xl-10">
 							<!--begin::Body-->
 							<!--start button-->
-								<div class="col-xxl-6">
-									<!--begin::List Widget 5-->
-									<div class="card card-xl-stretch mb-xl-10">
-										<!--begin::Header-->
-										<div class="card-header align-items-center border-0 mt-4">
-											<h3 class="card-title align-items-start flex-column">
-												<span class="fw-bold mb-2 text-dark">Activities</span>
-												<span class="text-muted fw-semibold fs-7">Tailored for you</span>
-											</h3>
-										</div>
-										<!--end::Header-->
-										<!--begin::Body-->
-										<div class="card-body d-flex flex-column align-items-center pt-5">
+							<div class="col-xxl-6">
+								<!--begin::List Widget 5-->
+								<div class="card card-xl-stretch mb-xl-10">
+									<!--begin::Header-->
+									<div class="card-header align-items-center border-0 mt-4">
+										<h3 class="card-title align-items-start flex-column">
+											<span class="fw-bold mb-2 text-dark">Activities</span>
+											<span class="text-muted fw-semibold fs-7">Tailored for you</span>
+										</h3>
+									</div>
+									<!--end::Header-->
+									<!--begin::Body-->
+									<div class="card-body d-flex flex-column align-items-center pt-5">
+										<a href="#"
+											class="btn btn-light-dark btn-flex hover-elevate-down btn-primary px-6">
+											<i class="fa-solid fa-dumbbell fs-2x"></i>
+											<span class="d-flex flex-column align-items-start ms-2">
+												<span class="fs-3 fw-bold">Start Exercise</span>
+												<span class="fs-7">Ready to burn some calories?</span>
+											</span>
+										</a>
+										<h3 class="card-title mt-5 text-center">
+											<span class="card-label fw-bold fs-5 mb-1">Or you can</span>
+										</h3>
+										<div class="card-body pt-5">
 											<a href="#"
 												class="btn btn-light-dark btn-flex hover-elevate-down btn-primary px-6">
-												<i class="fa-solid fa-dumbbell fs-2x"></i>
+												<i class="las la-trophy fs-3x"></i>
 												<span class="d-flex flex-column align-items-start ms-2">
-													<span class="fs-3 fw-bold">Start Exercise</span>
-													<span class="fs-7">Ready to burn some calories?</span>
+													<span class="fs-3 fw-bold">Challenge Your Friend</span>
+													<span class="fs-7">and burn some calories together?</span>
 												</span>
 											</a>
-											<h3 class="card-title mt-5 text-center">
-												<span class="card-label fw-bold fs-5 mb-1">Or you can</span>
-											</h3>
-											<div class="card-body pt-5">
-												<a href="#"
-													class="btn btn-light-dark btn-flex hover-elevate-down btn-primary px-6">
-													<i class="las la-trophy fs-3x"></i>
-													<span class="d-flex flex-column align-items-start ms-2">
-														<span class="fs-3 fw-bold">Challenge Your Friend</span>
-														<span class="fs-7">and burn some calories together?</span>
-													</span>
-												</a>
-											</div>
 										</div>
-
-										<!--end: Card Body-->
 									</div>
-									<!--end: List Widget 5-->
+
+									<!--end: Card Body-->
 								</div>
-								<!--End of start button-->
+								<!--end: List Widget 5-->
+							</div>
+							<!--End of start button-->
 							<!--begin::Body-->
 						</div>
 						<!--end::Tables Widget 9-->
@@ -1415,12 +1423,12 @@
 										</div>
 										<!--end::Wrapper-->
 										<!--begin::Row-->
-										<div class="row g-0">
+										<div class="row g-0 align-items-center">
 											<!--begin::Col-->
-											<div class="col-6">
-												<div class="d-flex align-items-center mb-9 me-2">
+											<div class="col-6 col-md-3 mb-5 mb-md-0">
+												<div class="d-flex flex-column align-items-center">
 													<!--begin::Symbol-->
-													<div class="symbol symbol-40px me-3">
+													<div class="symbol symbol-40px mb-2">
 														<div class="symbol-label bg-light">
 															<i class="ki-duotone ki-abstract-42 fs-1 text-dark">
 																<span class="path1"></span>
@@ -1430,19 +1438,17 @@
 													</div>
 													<!--end::Symbol-->
 													<!--begin::Title-->
-													<div>
-														<div class="fs-5 text-dark fw-bold lh-1">$50K</div>
-														<div class="fs-7 text-gray-600 fw-bold">Sales</div>
-													</div>
+													<div class="fs-5 text-dark fw-bold lh-1">$50K</div>
+													<div class="fs-7 text-gray-600 fw-bold">Sales</div>
 													<!--end::Title-->
 												</div>
 											</div>
 											<!--end::Col-->
 											<!--begin::Col-->
-											<div class="col-6">
-												<div class="d-flex align-items-center mb-9 ms-2">
+											<div class="col-6 col-md-3 mb-5 mb-md-0">
+												<div class="d-flex flex-column align-items-center">
 													<!--begin::Symbol-->
-													<div class="symbol symbol-40px me-3">
+													<div class="symbol symbol-40px mb-2">
 														<div class="symbol-label bg-light">
 															<i class="ki-duotone ki-abstract-45 fs-1 text-dark">
 																<span class="path1"></span>
@@ -1452,19 +1458,17 @@
 													</div>
 													<!--end::Symbol-->
 													<!--begin::Title-->
-													<div>
-														<div class="fs-5 text-dark fw-bold lh-1">$4,5K</div>
-														<div class="fs-7 text-gray-600 fw-bold">Revenue</div>
-													</div>
+													<div class="fs-5 text-dark fw-bold lh-1">$4.5K</div>
+													<div class="fs-7 text-gray-600 fw-bold">Revenue</div>
 													<!--end::Title-->
 												</div>
 											</div>
 											<!--end::Col-->
 											<!--begin::Col-->
-											<div class="col-6">
-												<div class="d-flex align-items-center me-2">
+											<div class="col-6 col-md-3 mb-5 mb-md-0">
+												<div class="d-flex flex-column align-items-center">
 													<!--begin::Symbol-->
-													<div class="symbol symbol-40px me-3">
+													<div class="symbol symbol-40px mb-2">
 														<div class="symbol-label bg-light">
 															<i class="ki-duotone ki-abstract-21 fs-1 text-dark">
 																<span class="path1"></span>
@@ -1474,19 +1478,17 @@
 													</div>
 													<!--end::Symbol-->
 													<!--begin::Title-->
-													<div>
-														<div class="fs-5 text-dark fw-bold lh-1">40</div>
-														<div class="fs-7 text-gray-600 fw-bold">Tasks</div>
-													</div>
+													<div class="fs-5 text-dark fw-bold lh-1">40</div>
+													<div class="fs-7 text-gray-600 fw-bold">Tasks</div>
 													<!--end::Title-->
 												</div>
 											</div>
 											<!--end::Col-->
 											<!--begin::Col-->
-											<div class="col-6">
-												<div class="d-flex align-items-center ms-2">
+											<div class="col-6 col-md-3">
+												<div class="d-flex flex-column align-items-center">
 													<!--begin::Symbol-->
-													<div class="symbol symbol-40px me-3">
+													<div class="symbol symbol-40px mb-2">
 														<div class="symbol-label bg-light">
 															<i class="ki-duotone ki-abstract-44 fs-1 text-dark">
 																<span class="path1"></span>
@@ -1496,10 +1498,8 @@
 													</div>
 													<!--end::Symbol-->
 													<!--begin::Title-->
-													<div>
-														<div class="fs-5 text-dark fw-bold lh-1">$5.8M</div>
-														<div class="fs-7 text-gray-600 fw-bold">Sales</div>
-													</div>
+													<div class="fs-5 text-dark fw-bold lh-1">$5.8M</div>
+													<div class="fs-7 text-gray-600 fw-bold">Sales</div>
 													<!--end::Title-->
 												</div>
 											</div>
@@ -1510,8 +1510,11 @@
 								</div>
 								<!--end::Mixed Widget 14-->
 							</div>
+
 							<!--end::Col-->
 						</div>
+						<!--end::Row-->
+
 						<!--end::Row-->
 						<!--begin::Tables Widget 9-->
 						<div class="card mb-5 mb-xl-10">
