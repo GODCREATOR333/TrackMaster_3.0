@@ -1,4 +1,5 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
@@ -91,12 +92,34 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'contact.html'));
 });
 
-app.get('/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/dashboard.html'));
+const handlebarsOptions = {
+  extname: '.html',
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+  },
+};
+
+app.engine('html', exphbs(handlebarsOptions));
+app.set('view engine', 'html');
+app.set('views', path.join(__dirname, 'dist'));
+
+app.get('/dashboard', isAuthenticated, (req, res) => {
+  const currentUser = req.user;
+  res.render('dashboard', { layout: false, user: { username: currentUser.username } });
 });
 
+function isAuthenticated(req, res, next) {
+  // Check if the user is authenticated
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  req.flash('errorMessage', 'You are not logged in to access Dashboard.');
+  res.redirect('/signin?errorMessage=You are not logged in to access Dashboard');
+}
+
 app.get('/logout', (req, res) => {
-  req.logout(function(err) {
+  req.logout(function (err) {
     if (err) {
       console.error(err);
       return res.status(500).send('An error occurred during logout.');
