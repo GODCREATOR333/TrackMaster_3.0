@@ -92,6 +92,10 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, 'contact.html'));
 });
 
+app.get('/game', (req, res) => {
+  res.sendFile(path.join(__dirname, 'game.html'));
+});
+
 const handlebarsOptions = {
   extname: '.html',
   runtimeOptions: {

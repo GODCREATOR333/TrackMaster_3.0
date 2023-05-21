@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snapchat-like Interface</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div id="camera-container">
+    <div id="camera-interface">
+      <video id="video" autoplay playsinline></video>
+    </div>
+    <div id="overlay">
+      <div id="time-container">
+        <span id="time" class="animated-time">00:00</span>
+      </div>
+      <div id="score-container">
+        <span id="score" class="animated-score">0</span>
+      </div>
+    </div>
+    <div id="button-container">
+      <button id="play-button">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
