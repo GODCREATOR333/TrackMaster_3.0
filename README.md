@@ -15,7 +15,6 @@ Check Out TrackMaster by cloning the repository
 ![signup](https://github.com/GODCREATOR333/TrackMaster_3.0/assets/66235065/32c81716-d82a-4348-b801-f7749c1bdb7f)
 
 ![singin](https://github.com/GODCREATOR333/TrackMaster_3.0/assets/66235065/618a4912-0ae8-4b88-848f-47d6b1310d7d)
-CREATOR333/TrackMaster_3.0/assets
 
 ![dashboard](https://github.com/GODCREATOR333/TrackMaster_3.0/assets/66235065/cfeda881-74d4-417f-a492-7a0eb6231025)
-/66235065/29a2753f-0a6a-4a9a-8da6-fc3a2c9799fa)
+
